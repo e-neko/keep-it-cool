@@ -11,8 +11,45 @@ a.dummy {
 .panel {
     display: none;
 }
+.panel.home {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.panel.home>div {
+    flex: 0 0 50%;
+    line-height: 1.5em;
+}
+.panel.home>div:first-child {
+    box-shadow: -1px 0 0 0 #545649 inset;
+}
+.panel.home>div:nth-child(n+3) {
+    box-shadow: 0 1px 0 0 #545649 inset;
+    flex: 0 0 100%;
+}
+.panel.home>div:after{
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+}
+.panel.home>div>label {
+    color: white;
+    padding-left: 30px;
+    width: 150px;
+    display: inline-block;
+    float: left;
+    clear: both;
+}
+.panel.home>div>label:first-child {
+    padding-left: 10px;
+    font-weight: bold;
+}
+.panel.home>div>span {
+    float: left;
+    clear: right;
+}
 a#home:target ~ .panel.home, a#settings:target ~ .panel.settings {
-    display: block;
+    display: flex;
 }
 #main {
     width: 900px;
